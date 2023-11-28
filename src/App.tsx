@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext } from 'react';
+
+import MainPage from './pages/Main';
+
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+
+import { CONTACT_USER, CURRENT_USER } from './shared/utils/constants';
+
+library.add(fas);
+
+const contextValue = {
+  currentUser: CURRENT_USER,
+  contactUser: CONTACT_USER,
+};
+
+export const UserContext = createContext(contextValue);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={contextValue}>
+      <MainPage />
+    </UserContext.Provider>
   );
 }
 

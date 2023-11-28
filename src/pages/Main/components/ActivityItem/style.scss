@@ -1,0 +1,97 @@
+@import "../../../../shared/styles/variables";
+
+.activity-item {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  .timestamp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 34px;
+    position: absolute;
+    left: -45px;
+    top: 17px;
+    font-size: 12px;
+  }
+  .icon-btn {
+    margin-right: 15px;
+    position: relative;
+    top: 10px;
+  }
+  .item-content {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: $light-gray;
+    position: relative;
+    .title {
+      font-weight: 500;
+      font-size: 16px;
+      .author, .contact {
+        color: $selected;
+        font-weight: 700;
+        &:first-of-type {
+          margin-right: 5px;
+        }
+        &:last-of-type {
+          margin-left: 5px;
+        }
+      }
+    }
+    .subtitle {
+      font-size: 14px;
+    }
+    &:hover {
+      .activity-item-btn {
+        opacity: 1;
+      }
+    }
+    .activity-item-btn {
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 10px;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      border: none;
+      top: calc(50% - 10px);
+      background-color: $selected;
+      transition: opacity 0.3s;
+      svg {
+        color: #fff;
+        width: 10px;
+      }
+      &:hover {
+        .btn-menu {
+          opacity: 1;
+        }
+      }
+      .btn-menu {
+        opacity: 0;
+        height: 30px;
+        width: 70px;
+        bottom: -30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        padding: 0 10px;
+        border-radius: 4px;
+        transition: opacity 0.3s;
+        button {
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}

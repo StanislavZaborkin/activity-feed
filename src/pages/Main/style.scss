@@ -1,0 +1,22 @@
+.main-page-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .main-page-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        width: 500px;
+        position: relative;
+        .timeline-divider {
+            position: absolute;
+            top: -15px;
+            bottom: -15px;
+            width: 1px;
+            background-color: #ccc;
+            left: 15px;
+        }
+    }
+}
